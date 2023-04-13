@@ -1,0 +1,85 @@
+<div class="container-sm" >
+  <h1>{{ clienteCpf ? 'Editar' : 'Cadastrar'}}</h1>
+  <div class="border border-secondary-subtle ">
+    <form [formGroup]="clienteForm" (ngSubmit)="cadastrar()">
+      <div class="row g-3 align-items-center my-1 mx-3">
+        <div class="col-2">
+          <div class="mb2">
+            <label for="cpf" class="col-form-label  ">CPF</label>
+          </div>
+          <div class="mb2">
+            <label for="nome" class="col-form-label my-1">Nome</label>
+          </div>
+          <div class="mb2">
+            <label for="telefone" class="col-form-label my-1">Telefone</label>
+          </div>
+          <div class="mb2">
+            <label for="rendimentoMensal" class="col-form-label my-1">Rendimento mensal</label
+            >
+          </div>
+          <div class="mb2">
+            <label for="rua" class="col-form-label my-1">Rua</label
+            >
+          </div>
+          <div class="mb2">
+            <label for="numero" class="col-form-label my-1">N°</label
+            >
+          </div>
+          <div class="mb2">
+            <label for="cep" class="col-form-label ">CEP</label
+            >
+          </div>
+        </div>
+        <div class="col-5 ">
+            <input id="cpf" type="number"   class="form-control my-1" formControlName='cpf'/>
+
+          <input
+            type="text"
+            id="nome"
+            class="form-control my-2"
+            formControlName="nome"
+          />
+
+          <input
+            type="number"
+            id="telefone"
+            class="form-control my-2"
+            formControlName="telefone"
+          />
+
+          <input
+            type="number"
+            id="rendimentoMensal"
+            class="form-control my-2"
+            formControlName="rendimentoMensal"
+            min="0"
+          />
+
+          <input
+            type="text"
+            id="rua"
+            class="form-control my-2"
+            formControlName="rua"
+
+          />
+          <input
+            type="number"
+            id="numero"
+            class="form-control my-2"
+            formControlName="numero"
+            min="0"
+          />
+          <input
+            type="number"
+            id="cep"
+            class="form-control my-2"
+            formControlName="cep"
+          />
+        </div>
+
+      </div>
+
+      <button type="submit" [disabled]="!clienteForm.valid" class="btn btn-outline-light my-3 mx-3">{{clienteCpf ? 'Editar' : 'Cadastrar'}}</button>
+    </form>
+  </div>
+</div>
